@@ -18,7 +18,7 @@ fn main() {
                         app_handle.emit_all("status_json", response.into_string().unwrap()).unwrap();
                     }
                     Err(_) => {
-                        app_handle.emit_all("note", "JSONファイルがうまく取得できなかったようです！".to_string()).unwrap();
+                        app_handle.emit_all("note", "JSONファイルがうまく取得できなかったようです。\nネットワーク接続を確認してみてください。".to_string()).unwrap();
                     }
                 }
                 std::thread::sleep(time::Duration::from_secs(120));

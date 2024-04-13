@@ -21,6 +21,7 @@ function App() {
   const [eventsStatus, setEventsStatus] = useState<EventsStatus>([{date: "", time: "", detail: ""}]);
   useEffect(() => {
     let unlisten: UnlistenFn;
+    let note_unlisten: UnlistenFn;
     async function fetchStatusJson() {
       unlisten = await listen<string>("status_json", event => {
       try {
@@ -52,7 +53,16 @@ function App() {
         if(unlisten) unlisten();
       }
     }
+    async function fetchNote() {
+      note_unlisten = await listen<string>("note", event => {
+        setNoteStatus(event.payload);
+      });
+      return () => {
+        if(note_unlisten) note_unlisten();
+      }
+    }
     fetchStatusJson();
+    fetchNote();
   }, []);
 
   return (
@@ -87,7 +97,7 @@ function App() {
       </div>
       <div className="p-8 bg-blue-100 rounded-3xl">
         <div className="text-4xl mb-8">その他の連絡</div>
-        <div>{noteStatus}</div>
+        <div className="whitespace-pre-wrap">{noteStatus}</div>
       </div>
     </div>
   );
