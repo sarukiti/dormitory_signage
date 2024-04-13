@@ -25,7 +25,6 @@ function App() {
       unlisten = await listen<string>("status_json", event => {
       try {
         const status_json = JSON.parse(event.payload);
-        console.log(status_json);
 
         setEventsStatus(status_json.events);
 
