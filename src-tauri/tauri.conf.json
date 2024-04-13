@@ -31,7 +31,7 @@
     "bundle": {
       "active": true,
       "targets": "all",
-      "identifier": "com.tauri.dev",
+      "identifier": "jp.ac.yonago-k",
       "icon": [
         "icons/rounded_nityc_aniv_logo.png"
       ]
