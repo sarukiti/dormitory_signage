@@ -91,9 +91,9 @@ function App() {
     <div className="w-screen h-screen px-10 py-16 grid grid-cols-2 grid-rows-3 gap-x-20 gap-y-10">
       <div className="p-8 col-start-1 row-start-1 row-span-2 bg-blue-100 rounded-3xl">
         <div className="text-4xl mb-8">寮行事予定</div>
-        <table className="[&_tr]:h-10 [&_td]:text-base w-full divide-y divide-black">
+        <table className="[&_tr]:h-10 [&_td]:text-base w-full">
           <thead>
-            <tr>
+            <tr className="[&>th]:border-b [&>th]:border-black">
               <th className="text-left w-24 text-sm">日付</th>
               <th className="text-left w-24 text-sm">時刻</th>
               <th className="text-left w-72 text-sm">内容</th>
@@ -119,12 +119,12 @@ function App() {
       </div>
       <div className="p-8 col-start-2 row-start-1 row-span-2 bg-blue-100 rounded-3xl">
         <div className="text-4xl mb-8">今週の当番表</div>
-        <table className="[&_tr]:h-10 [&_td]:text-base w-full divide-y divide-black">
+        <table className="[&_td]:text-base w-full">
           <thead>
-            <tr>
+            <tr className="h-5">
               <th colSpan={6} className="w-24 text-sm" >南寮</th>
             </tr>
-            <tr>
+            <tr className="h-10 [&>th]:border-b [&>th]:border-black">
               <th className="text-left w-72 text-sm">1F</th>
               <th className="text-left w-72 text-sm">2F</th>
               <th className="text-left w-72 text-sm">3F</th>
@@ -134,7 +134,7 @@ function App() {
             </tr>
           </thead>
           <tbody>
-            <tr>
+            <tr className="h-10">
               <td>{dutyStatus.south.one_floor}</td>
               <td>{dutyStatus.south.two_floor}</td>
               <td>{dutyStatus.south.three_floor}</td>
@@ -143,12 +143,12 @@ function App() {
               <td>{dutyStatus.south.shower}</td>
             </tr>
           </tbody>
-          <tr className="h-5"></tr>
+          <tr className="h-10"></tr>
           <thead>
-            <tr>
-              <th colSpan={6} className="w-24 text-sm border" >あさぎり寮</th>
+            <tr className="h-5">
+              <th colSpan={6} className="w-24 text-sm" >あさぎり寮</th>
             </tr>
-            <tr>
+            <tr className="h-10 [&>th]:border-b [&>th]:border-black">
               <th className="text-left w-72 text-sm"></th>
               <th className="text-left w-72 text-sm">2F</th>
               <th className="text-left w-72 text-sm">3F</th>
@@ -158,7 +158,7 @@ function App() {
             </tr>
           </thead>
           <tbody>
-            <tr>
+            <tr className="h-10">
               <td></td>
               <td>{dutyStatus.asagiri.two_floor}</td>
               <td>{dutyStatus.asagiri.three_floor}</td>

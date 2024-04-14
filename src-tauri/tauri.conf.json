@@ -33,7 +33,8 @@
       "targets": "all",
       "identifier": "jp.ac.yonago-k",
       "icon": [
-        "icons/rounded_nityc_aniv_logo.png"
+        "icons/rounded_nityc_aniv_logo.png",
+        "icons/icon.ico"
       ]
     }
   }
